@@ -30,4 +30,9 @@ public class Assignment1Context : IdentityDbContext<Assignment1User>
         // Add your customizations after calling base.OnModelCreating(builder);
 
     }
+
+    internal void SavedChanges()
+    {
+        throw new NotImplementedException();
+    }
 }

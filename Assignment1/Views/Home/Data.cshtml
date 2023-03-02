@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@model IEnumerable<Bid>
+
+@using Microsoft.AspNetCore.Identity
 @using Assignment1.Areas.Identity.Data
 
 @inject SignInManager<Assignment1User> SignInManager
@@ -11,4 +13,9 @@
 }
  <h3> Bid added by @UserManager.GetUserName(User)</h3>
  <a asp-controller"Home" asp-action="add" style="text-align:left;" class="btn btn-primary"> Add Bid</a>
- <hr />
+ <br />
+@foreach(var pro in @Model ){
+    <p><strong>Bid Name: </strong></p>
+    <p>@pro.ItemName  <a asp-controller="Home" asp-action="Delete" class="btn btn-danger" asp-route-id="@pro.BidId">Delete</a></p>
+    
+}

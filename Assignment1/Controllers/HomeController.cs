@@ -23,9 +23,19 @@ namespace Assignment1.Controllers
 
         public IActionResult Data()
         {
-            return View();
+            var user = User.Identity.GetUserId();
+            var pro = _Context.Products.Where(p => p.user ==user);
+            return View(pro);
         }
-
+        public IActionResult Delete(int id)
+        {
+            var user = User.Identity.GetUserId();
+            var pro = _Context.Products.Find(id);
+            _Context.Products.Remove(pro);
+            _Context.SaveChanges();
+            
+            return RedirectToAction("Data");
+        }
         public IActionResult Add()
         {
             ViewBag.cat = _Context.Categories;

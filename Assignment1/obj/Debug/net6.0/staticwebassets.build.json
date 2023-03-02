@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2AhBd8pYfiOKO367VrD0LwmybgOCrqJfTuW6T0yyPqk=",
+  "Hash": "tKtznZnf/826BShjcTnbAa4hq7f6ZfoQn3A3R+leNtA=",
   "Source": "Assignment1",
   "BasePath": "_content/Assignment1",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\shrir\\Source\\Repos\\webAssignment1_group-40\\Assignment1\\wwwroot\\download233822258.jpeg",
+      "SourceId": "Assignment1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\shrir\\Source\\Repos\\webAssignment1_group-40\\Assignment1\\wwwroot\\",
+      "BasePath": "_content/Assignment1",
+      "RelativePath": "download233822258.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\download233822258.jpeg"
     },
     {
       "Identity": "C:\\Users\\shrir\\Source\\Repos\\webAssignment1_group-40\\Assignment1\\wwwroot\\favicon.ico",

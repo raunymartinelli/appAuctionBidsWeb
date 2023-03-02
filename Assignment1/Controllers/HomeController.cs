@@ -1,4 +1,5 @@
-﻿using Assignment1.Models;
+﻿using Assignment1.Areas.Identity.Data;
+using Assignment1.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,27 +7,30 @@ namespace Assignment1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private Assignment1Context _Context { get; set; }
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(Assignment1Context content, IWebHostEnvironment hEnvironment)
         {
-            _logger = logger;
+            _Context = content;
+            this._hostingEnvironment = hEnvironment;
         }
-
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Data()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Add()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+
+
+
     }
 }

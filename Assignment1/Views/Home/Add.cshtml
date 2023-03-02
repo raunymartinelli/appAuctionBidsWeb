@@ -1,0 +1,53 @@
+﻿@model Bid;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@{
+    ViewData["Title"] = "Add Bid | Assignment1";
+}
+@using (Html.BeginForm("AddBid", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.LabelFor(model => model.ItemName)
+        @Html.TextBoxFor(model => model.ItemName, new { @class = "form-control", required = "required" })
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.ItemDescription)
+        @Html.TextAreaFor(model => model.ItemDescription, new { @class = "form-control", required = "required" })
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.MinimumCost)
+        @Html.TextBoxFor(model => model.MinimumCost, new { @class = "form-control", type = "number", step = "any", required = "required" })
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.AuctionDates)
+        @Html.EditorFor(model => model.AuctionDates, new { htmlAttributes = new { @class = "form-control", type = "datetime-local", required = "required" } })
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.AssetCondition)
+        @Html.DropDownListFor(model => model.AssetCondition, new SelectList(ViewBag.AssetConditionList, "Value", "Text"), "Select", new { @class = "form-control", required = "required" })
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.Category)
+        @Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.CategoryList, "Value", "Text"), "Select", new { @class = "form-control", required = "required" })
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.ImageUpload)
+        <input type="file" name="ImageUpload" required="required" />
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+}

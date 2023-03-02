@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tKtznZnf/826BShjcTnbAa4hq7f6ZfoQn3A3R+leNtA=",
+  "Hash": "4Ip/N9RzDmaRSVF3J6MagOoZF0Zb8v4PnOZhmvfiHh0=",
   "Source": "Assignment1",
   "BasePath": "_content/Assignment1",
   "Mode": "Default",
@@ -1086,6 +1086,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\shrir\\Source\\Repos\\webAssignment1_group-40\\Assignment1\\wwwroot\\download231513782.jpeg",
+      "SourceId": "Assignment1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\shrir\\Source\\Repos\\webAssignment1_group-40\\Assignment1\\wwwroot\\",
+      "BasePath": "_content/Assignment1",
+      "RelativePath": "download231513782.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\download231513782.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\shrir\\Source\\Repos\\webAssignment1_group-40\\Assignment1\\wwwroot\\download231552829.jpeg",
+      "SourceId": "Assignment1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\shrir\\Source\\Repos\\webAssignment1_group-40\\Assignment1\\wwwroot\\",
+      "BasePath": "_content/Assignment1",
+      "RelativePath": "download231552829.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\download231552829.jpeg"
     },
     {
       "Identity": "C:\\Users\\shrir\\Source\\Repos\\webAssignment1_group-40\\Assignment1\\wwwroot\\download233822258.jpeg",

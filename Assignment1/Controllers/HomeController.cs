@@ -58,6 +58,22 @@ namespace Assignment1.Controllers
             return RedirectToAction("Data");
         }
 
+        public IActionResult Search(string searchText)
+        
+        {
+           var pro =  _Context.Products.Where(bidItem=> bidItem.ItemName.Contains(searchText) || bidItem.ItemDescription.Contains(searchText)).ToList();
+            return View(pro);
+        }
+
+        public IActionResult Info(int id)
+        {
+            
+            var pro = _Context.Products.Find(id);
+            return View(pro);
+            
+
+
+        }
 
 
     }

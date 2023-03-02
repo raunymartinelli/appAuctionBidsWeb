@@ -4,6 +4,12 @@ using Assignment1.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Assignment1ContextConnection") ?? throw new InvalidOperationException("Connection string 'Assignment1ContextConnection' not found.");
 
+builder.Services.AddRouting(options =>
+{
+    options.LowercaseUrls = true;
+    options.AppendTrailingSlash = true;
+});
+
 
 
 builder.Services.AddDbContext<Assignment1Context>(options =>
@@ -17,11 +23,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-builder.Services.AddRouting(options =>
-{
-    options.LowercaseUrls = true;
-    options.AppendTrailingSlash = true;
-});
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

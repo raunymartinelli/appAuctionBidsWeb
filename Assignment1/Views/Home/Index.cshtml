@@ -4,20 +4,42 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-     <section style="display:flex; flex-wrap:wrap; ">
-@foreach(var product in @Model){
-    <ul style="width:24%; margin: 5% 0 0 1%;list-style:none; box-shadow: -6px 20px 23px 5px rgba(0,0,0,0.54); text-align:center;">
-           <a asp-controller="Home"  asp-action="Info" asp-route-id="@product.BidId">
-            <li><img src="~/@product.ImageName" style="width:90%;" ></li>
-               <li>@product.ItemName</li>
-               <li>@product.ItemDescription</li>
-            <li>@product.MinimumCost</li>
-            </a>
-
-     </ul>
-}
-
-</section>
-</div>
+<div class="container">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/01_mercedes_benz_museum_55_years.jpg" class="d-block w-100" alt="Cars" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Win a Car with Us</h2>
+                    <p>Join our auction and get a chance to win a brand new car!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://vanishauctions.com/wp-content/uploads/auction-or-judge-gavel-on-a-laptop-2021-08-26-16-34-02-utc-1600x700.jpg" class="d-block w-100" alt="Auction Hammer" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Get the Best Deals</h2>
+                    <p>Shop with us and get the best prices for quality products.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://rgcopcorpweb920-cdn-endpoint.azureedge.net/-/media/Project/COP/COP/Visit-Perth/Grants-and-Sponsorship-event-cover-pic/035_BFPL-WINTERLIGHT_20210813-_C5A5237/LR_099_WASO_Christmas-Symphony-211211_credit-Rebecca-Mansell.jpg?h=700&w=1600&rev=f2a1c695bf194147b29816a87f5b33d0&modified=20220328074917&useCustomFunctions=1&centerCrop=1&hash=51D1374D94AA283E260BC4E833F6DE9F" class="d-block w-100" alt="People" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Join Our Community</h2>
+                    <p>Join the biggest community in the world and sell your products with us.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </

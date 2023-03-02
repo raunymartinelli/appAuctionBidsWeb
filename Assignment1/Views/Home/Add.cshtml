@@ -1,59 +1,69 @@
 ﻿@model Bid;
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-
 @{
     ViewData["Title"] = "Add Bid | Assignment1";
 }
-<form asp-controller="Home" asp-action="addBid"  enctype="multipart/form-data">
-  <label asp-for="ItemName" >Product Name:</label>
-  <input type="text" id="product-name" asp-for="ItemName" required>
-  <br>
-  
-  <label asp-for="ItemDescription">Product Description:</label>
-  <textarea id="product-description" asp-for="ItemDescription" required></textarea>
-  <br>
-  
-  <label asp-for="MinimumCost">Minimum Cost/Bid amount:</label>
-  <input type="number" id="minimum-bid" asp-for="MinimumCost" required>
-  <br>
-  
-  <label asp-for="AuctionDatesStart">Starting Bid Date:</label>
-  <input type="datetime-local" id="auction-start-date" asp-for="AuctionDatesStart" required>
-  <br>
-  <label  asp-for="AuctionDates">Expiry Bid Date:</label>
-  <input type="datetime-local" id="auction-start-date" asp-for="AuctionDates" required>
-  <br>
-  
-  <label  asp-for="AssetCondition">Asset Condition:</label>
-  <select id="asset-condition" asp-for="AssetCondition" required>
-    <option disabled value="">Select</option>
-    <option value="new">New</option>
-    <option value="used">Used</option>
-    <option value="refurbished">Refurbished</option>
-  </select>
-  <br>
-  
-   <label  asp-for="CategoryId">Asset Condition:</label>
-  <select id="asset-condition" asp-for="CategoryId" required>
-    <option disabled value="">Select</option>
 
-        @foreach (var cat in @ViewBag.cat)
-        {
-             <option  value="@cat.CategoryId">@cat.CategoryName</option>
-        }
+<h2>@ViewData["Title"]</h2>
 
-  </select>
-  <br>
-  
-  <label asp-for="ImageUpload">Image Upload:</label>
-  <input type="file" id="image-upload" asp-for="ImageUpload" accept="image/*" required>
-  <br>
-  
-  <input type="submit" value="Submit">
+<form asp-controller="Home" asp-action="addBid" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="ItemName">Product Name:</label>
+        <input type="text" id="product-name" asp-for="ItemName" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ItemDescription">Product Description:</label>
+        <textarea id="product-description" asp-for="ItemDescription" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MinimumCost">Minimum Cost/Bid amount:</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="number" id="minimum-bid" asp-for="MinimumCost" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AuctionDatesStart">Starting Bid Date:</label>
+        <input type="datetime-local" id="auction-start-date" asp-for="AuctionDatesStart" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AuctionDates">Expiry Bid Date:</label>
+        <input type="datetime-local" id="auction-end-date" asp-for="AuctionDates" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AssetCondition">Asset Condition:</label>
+        <select id="asset-condition" asp-for="AssetCondition" class="form-control" required>
+            <option disabled value="">Select</option>
+            <option value="new">New</option>
+            <option value="used">Used</option>
+            <option value="refurbished">Refurbished</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryId">Category:</label>
+        <select id="category" asp-for="CategoryId" class="form-control" required>
+            <option disabled value="">Select</option>
+            @foreach (var cat in @ViewBag.cat)
+            {
+                <option value="@cat.CategoryId">@cat.CategoryName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ImageUpload">Image Upload:</label>
+        <input type="file" id="image-upload" asp-for="ImageUpload" accept="image/*" class="form-control-file" required>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
 </form>

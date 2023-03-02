@@ -10,44 +10,50 @@
 @{
     ViewData["Title"] = "Add Bid | Assignment1";
 }
-@using (Html.BeginForm("AddBid", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <div>
-        @Html.LabelFor(model => model.ItemName)
-        @Html.TextBoxFor(model => model.ItemName, new { @class = "form-control", required = "required" })
-    </div>
+<form asp-controller="Home" asp-action="addBid"  enctype="multipart/form-data">
+  <label asp-for="ItemName" >Product Name:</label>
+  <input type="text" id="product-name" asp-for="ItemName" required>
+  <br>
+  
+  <label asp-for="ItemDescription">Product Description:</label>
+  <textarea id="product-description" asp-for="ItemDescription" required></textarea>
+  <br>
+  
+  <label asp-for="MinimumCost">Minimum Cost/Bid amount:</label>
+  <input type="number" id="minimum-bid" asp-for="MinimumCost" required>
+  <br>
+  
+  <label asp-for="AuctionDatesStart">Starting Bid Date:</label>
+  <input type="datetime-local" id="auction-start-date" asp-for="AuctionDatesStart" required>
+  <br>
+  <label  asp-for="AuctionDates">Expiry Bid Date:</label>
+  <input type="datetime-local" id="auction-start-date" asp-for="AuctionDates" required>
+  <br>
+  
+  <label  asp-for="AssetCondition">Asset Condition:</label>
+  <select id="asset-condition" asp-for="AssetCondition" required>
+    <option disabled value="">Select</option>
+    <option value="new">New</option>
+    <option value="used">Used</option>
+    <option value="refurbished">Refurbished</option>
+  </select>
+  <br>
+  
+   <label  asp-for="CategoryId">Asset Condition:</label>
+  <select id="asset-condition" asp-for="CategoryId" required>
+    <option disabled value="">Select</option>
 
-    <div>
-        @Html.LabelFor(model => model.ItemDescription)
-        @Html.TextAreaFor(model => model.ItemDescription, new { @class = "form-control", required = "required" })
-    </div>
+        @foreach (var cat in @ViewBag.cat)
+        {
+             <option  value="@cat.CategoryId">@cat.CategoryName</option>
+        }
 
-    <div>
-        @Html.LabelFor(model => model.MinimumCost)
-        @Html.TextBoxFor(model => model.MinimumCost, new { @class = "form-control", type = "number", step = "any", required = "required" })
-    </div>
-
-    <div>
-        @Html.LabelFor(model => model.AuctionDates)
-        @Html.EditorFor(model => model.AuctionDates, new { htmlAttributes = new { @class = "form-control", type = "datetime-local", required = "required" } })
-    </div>
-
-    <div>
-        @Html.LabelFor(model => model.AssetCondition)
-        @Html.DropDownListFor(model => model.AssetCondition, new SelectList(ViewBag.AssetConditionList, "Value", "Text"), "Select", new { @class = "form-control", required = "required" })
-    </div>
-
-    <div>
-        @Html.LabelFor(model => model.Category)
-        @Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.CategoryList, "Value", "Text"), "Select", new { @class = "form-control", required = "required" })
-    </div>
-
-    <div>
-        @Html.LabelFor(model => model.ImageUpload)
-        <input type="file" name="ImageUpload" required="required" />
-    </div>
-
-    <div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-}
+  </select>
+  <br>
+  
+  <label asp-for="ImageUpload">Image Upload:</label>
+  <input type="file" id="image-upload" asp-for="ImageUpload" accept="image/*" required>
+  <br>
+  
+  <input type="submit" value="Submit">
+</form>

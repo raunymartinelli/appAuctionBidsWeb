@@ -18,17 +18,17 @@ namespace Assignment1.Models
         [Required(ErrorMessage = "Invalid Assest_Condition ")]
         public string? AssetCondition { get; set; }
         [Required(ErrorMessage = "Select Bid Date")]
+        public DateTime AuctionDatesStart { get; set; }
+        [Required(ErrorMessage = "Select Bid Date")]
         public DateTime AuctionDates { get; set; }
         public string? ImageName { get; set; }
         [NotMapped]
 
         public IFormFile ImageUpload { get; set; }
-        [Required(ErrorMessage = "Please enter a valid Product Name")]
-       
-       
-        
         [Range(1, 6, ErrorMessage = "Select Correct Category")]
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
-    }
+
+        public string? user { get; set; }
+}
 }

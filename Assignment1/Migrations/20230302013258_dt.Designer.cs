@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment1.Migrations
 {
     [DbContext(typeof(Assignment1Context))]
-    [Migration("20230302005227_dt")]
+    [Migration("20230302013258_dt")]
     partial class dt
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,6 +104,9 @@ namespace Assignment1.Migrations
                     b.Property<DateTime>("AuctionDates")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("AuctionDatesStart")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -119,6 +122,9 @@ namespace Assignment1.Migrations
 
                     b.Property<string>("MinimumCost")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("user")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BidId");

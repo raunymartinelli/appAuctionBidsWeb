@@ -177,9 +177,11 @@ namespace Assignment1.Migrations
                     ItemDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MinimumCost = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AssetCondition = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AuctionDatesStart = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AuctionDates = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    user = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

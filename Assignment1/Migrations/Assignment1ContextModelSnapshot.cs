@@ -102,6 +102,9 @@ namespace Assignment1.Migrations
                     b.Property<DateTime>("AuctionDates")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("AuctionDatesStart")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -117,6 +120,9 @@ namespace Assignment1.Migrations
 
                     b.Property<string>("MinimumCost")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("user")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BidId");

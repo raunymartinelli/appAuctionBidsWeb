@@ -1,5 +1,6 @@
 ﻿using Assignment1.Areas.Identity.Data;
 using Assignment1.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -27,7 +28,24 @@ namespace Assignment1.Controllers
 
         public IActionResult Add()
         {
+            ViewBag.cat = _Context.Categories;
             return View();
+        }
+        public async Task<IActionResult> addBid(Bid product) {
+
+            product.user = User.Identity.GetUserId();
+            string fileName = Path.GetFileNameWithoutExtension(product.ImageUpload.FileName);
+            string extension = Path.GetExtension(product.ImageUpload.FileName);
+            product.ImageName = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            string path = Path.Combine(_hostingEnvironment.WebRootPath, fileName);
+            using (var fileStream = new FileStream(path, FileMode.Create))
+            {
+                await product.ImageUpload.CopyToAsync(fileStream);
+            }
+            //Insert record
+            _Context.Add(product);
+            await _Context.SaveChangesAsync();
+            return RedirectToAction("Data");
         }
 
 

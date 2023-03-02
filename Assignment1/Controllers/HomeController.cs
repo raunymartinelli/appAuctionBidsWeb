@@ -18,7 +18,7 @@ namespace Assignment1.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(_Context.Products);
         }
 
         public IActionResult Data()

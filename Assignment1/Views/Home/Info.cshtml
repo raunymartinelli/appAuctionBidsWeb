@@ -1,5 +1,18 @@
-﻿@*
+﻿@model Bid
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+<section style="width:80%">
+<img src="~/@Model.ImageName" style="width:50% ;float:left"/>
+<p><strong>Name : </strong>@Model.ItemName</p>
+<p><strong>Description : </strong>@Model.ItemDescription</p>
+<p><strong>Cost : </strong>@Model.MinimumCost</p>
+<p><strong>Start Bid Date : </strong>@Model.AuctionDatesStart</p>
+<p><strong>Expiry Bid Date : </strong>@Model.AuctionDates</p>
+<p><strong>Conditiom : </strong>@Model.AssetCondition</p>
+<p class="btn btn-primary"> add Bid</p>
+
+</section>
